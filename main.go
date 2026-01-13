@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"tristarget/tristar"
+	"github.com/PawelReich/tristarget/tristar"
 )
 
 func main() {
