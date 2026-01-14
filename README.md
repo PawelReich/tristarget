@@ -6,7 +6,7 @@ Works only in Gdansk. Using data from [Otwarte dane ZTM w Gdańsku](https://ztm.
 
 ## Installation
 ```bash
-go install https://github.com/PawelReich/tristarget.git@latest
+go install github.com/PawelReich/tristarget@latest
 ```
 
 ## How to find my stop?
