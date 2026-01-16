@@ -52,7 +52,7 @@ func FindDepartures(stopId int, routeId int, limit int) error {
 	for _, departure := range stopData {
 		if routeId == -1 || routeId == departure.RouteID {
 			printed++
-			if printed > limit {
+			if limit != -1 && printed > limit {
 				break
 			}
 			fmt.Printf("%d %s\n", departure.RouteID, departure.EstimatedTime.Local().Format("15:04:05"))
