@@ -24,8 +24,6 @@ func FetchAvailableStops() ([]Stop, error) {
 
 	todayDate := time.Now().Format("2006-01-02")
 
-	// fmt.Printf("%s\n", todayDate)
-
 	if stopData, ok := stopsMap[todayDate]; ok {
 		return stopData.Stops, nil
 	}
@@ -34,7 +32,6 @@ func FetchAvailableStops() ([]Stop, error) {
 }
 
 func FetchStopData(stopId int) ([]Departure, error) {
-
 	stopJson, err := http.Get(fmt.Sprintf("https://ckan2.multimediagdansk.pl/departures?stopId=%d", stopId))
 	if err != nil {
 		return nil, err

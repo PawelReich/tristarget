@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
 	"github.com/PawelReich/tristarget/tristar"
 )
 
 func main() {
-
 	if len(os.Args) < 2 {
 		fmt.Println("Expected 'find' or 'departures'")
 		os.Exit(1)
@@ -72,7 +72,6 @@ func FindStop(searchTerm string) error {
 	for _, stop := range stops {
 		nameLower := fmt.Sprintf("%s %s", strings.ToLower(stop.StopName), stop.SubName)
 		if strings.Contains(nameLower, searchTermLower) {
-
 			fmt.Printf("%d: %s %s\n", stop.StopId, stop.StopName, stop.SubName)
 		}
 	}
