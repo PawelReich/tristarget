@@ -13,7 +13,7 @@ func FetchAvailableStops() ([]Stop, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer stopsJson.Body.Close()
+	defer func() { _ = stopsJson.Body.Close() }()
 
 	var stopsMap map[string]StopData
 
@@ -28,7 +28,7 @@ func FetchAvailableStops() ([]Stop, error) {
 		return stopData.Stops, nil
 	}
 
-	return nil, errors.New("Dataset does not contain data for today")
+	return nil, errors.New("dataset does not contain data for today")
 }
 
 func FetchStopData(stopId int) ([]Departure, error) {
@@ -36,7 +36,7 @@ func FetchStopData(stopId int) ([]Departure, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer stopJson.Body.Close()
+	defer func() { _ = stopJson.Body.Close() }()
 
 	var stopData StopDepartures
 
